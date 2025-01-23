@@ -1,0 +1,35 @@
+
+public class Question {
+	package lab1;
+
+	import java.nio.file.attribute.AclEntry;
+	import java.sql.Connection; 
+	import java.sql.Statement;
+
+	import com.mysql.cj.jdbc.MysqlDataSource;
+
+	import java.sql.ResultSet; 
+	import java.sql.SQLException; 
+
+
+	public class Question1 {
+		
+		public static void main(String[] args) {
+			
+			MysqlDataSource mysqlds = new MysqlDataSource();
+			mysqlDS.setURL("jdbc:mysql://localhost:3306/employees?serverTimezone=UTC");
+			mysqlDS.setUser("root");
+			mysqlDS.setPassword("root");
+			
+			try {
+				Connection conn = mysqlDS.getConnection();
+				System.out.println("Finished");
+			} catch (MySQLException e) {
+				System.out.println(e.getErrorCode());
+				System.out.println(e.getMessage());
+			}
+		}
+
+	}
+
+}

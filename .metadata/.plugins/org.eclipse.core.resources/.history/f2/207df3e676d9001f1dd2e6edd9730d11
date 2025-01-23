@@ -1,0 +1,9 @@
+package lab1;
+
+public class Employee {
+	private int id, nokId;
+	private String name, nokName;
+	private double salary;
+	
+	
+}

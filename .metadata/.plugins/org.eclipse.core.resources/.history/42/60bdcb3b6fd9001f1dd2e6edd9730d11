@@ -1,0 +1,18 @@
+
+package lab1;
+
+import java.sql.Connection; 
+import java.sql.Statement;
+
+import com.mysql.cj.jdbc.MysqlDataSource;
+
+import java.sql.ResultSet; 
+import java.sql.SQLException; 
+
+
+public class Question1 {
+	MysqlDataSource mysqlds = new MysqlDataSource();
+	mysqlDS.setURL("jdbc:mysql://localhost:3306/employees?serverTimezone=UTC");
+`	mysqlDS.setUser(\"root\");
+					+ "
+}

@@ -1,0 +1,67 @@
+package lab1;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ArrayDeque;
+import java.util.Scanner;
+
+import com.mysql.cj.jdbc.MysqlDataSource;
+
+public class Question1P3 {
+	
+	// no need for user input
+	private static Scanner kb = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		
+		MysqlDataSource mysqlds = new MysqlDataSource();
+		mysqlds.setURL("jdbc:mysql://localhost:3306/salespersondb?serverTimezone=UTC");
+		mysqlds.setUser("root");
+		mysqlds.setPassword("root");
+		
+		var employees = new ArrayDeque<Employee>();
+		
+		try {
+			Connection conn = mysqlds.getConnection();
+			
+			// query - needs 2 joins
+			String query = "DELETE FROM salesperson_table"
+					+ "	WHERE city = x";
+			
+			// statement does not take any params
+			PreparedStatement myStmt = conn.prepareStatement(query);
+			
+			/*
+			System.out.println("Enter name of city you wish to delete: ");
+			String choice = kb.nextLine();
+			 */
+			
+			while (rs.next()) {
+				String sid = rs.getString("sid");
+				String fname = rs.getString("fname");
+				String sname = rs.getString("surname");
+				Date dob = rs.getDate("dob");
+				String city = rs.getString("city");
+				Double commission = rs.getDouble("commission");
+				
+				System.out.println(sid + "\t" + 
+						fname + "\t" + 
+						sname + "\t" + 
+						dob + "\t" + 
+						city + "\t" + 
+						commission + "\t"
+						);
+			}
+			
+			conn.close();
+			myStmt.close();
+			System.out.println("\nConnection closed successfully");
+			
+		} catch (SQLException e) {
+			System.out.println(e.getErrorCode());
+			System.out.println(e.getMessage());
+		}
+	}
+}

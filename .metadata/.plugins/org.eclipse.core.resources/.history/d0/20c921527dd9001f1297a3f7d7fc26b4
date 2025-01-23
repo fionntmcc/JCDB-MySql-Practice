@@ -1,0 +1,59 @@
+package lab1;
+
+public class Employee {
+	private int id;
+	private String name, nokName;
+	private double salary;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getNokId() {
+		return nokId;
+	}
+	public void setNokId(int nokId) {
+		this.nokId = nokId;
+	}
+	public Employee(int id, int nokId, String name, String nokName, double salary) {
+		super();
+		this.id = id;
+		this.nokId = nokId;
+		this.name = name;
+		this.nokName = nokName;
+		this.salary = salary;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getNokName() {
+		return nokName;
+	}
+	public void setNokName(String nokName) {
+		this.nokName = nokName;
+	}
+	public double getSalary() {
+		return salary;
+	}
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	@Override
+	public String toString() {
+		return "Employee [id=" + id
+				+ ", name=" + name
+				+ ", nokName=" + nokName
+				+ ", salary=" + salary
+				+ "]";
+	}
+	
+	
+	
+	
+}
